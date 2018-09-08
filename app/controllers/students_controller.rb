@@ -19,15 +19,15 @@ class StudentsController < ApplicationController
   def activate
       @student = Student.find(params[:id])
 
-      if @student.active == false
+      if @student.active
+          @student.active = false
+          @student_saying = "This student is currently inactive."
+      else
           @student.active = true
           @student_saying = "This student is currently active."
-
-      else
-          @student.active = false
-          @student_saying = "This student is currently inactive."  
       end
       @student.save
+      redirect @student
   end
 
   private

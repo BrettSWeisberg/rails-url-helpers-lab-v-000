@@ -20,10 +20,10 @@ class StudentsController < ApplicationController
       @student = Student.find(params[:id])
 
       if @student.active == false
-          @student.active == true
+          @student.active = true
           @student_saying = "This student is currently active."
       else
-          @student.active == false
+          @student.active = false
           @student_saying = "This student is currently inactive."
       end
   end

@@ -22,10 +22,12 @@ class StudentsController < ApplicationController
       if @student.active == false
           @student.active = true
           @student_saying = "This student is currently active."
+          
       else
           @student.active = false
-          @student_saying = "This student is currently inactive."
+          @student_saying = "This student is currently inactive."  
       end
+      @student.save
   end
 
   private

@@ -27,7 +27,7 @@ class StudentsController < ApplicationController
           @student_saying = "This student is currently active."
       end
       @student.save
-      redirect @student
+      redirect_to @student
   end
 
   private
